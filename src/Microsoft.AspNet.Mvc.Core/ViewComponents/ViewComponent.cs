@@ -8,6 +8,7 @@ using Microsoft.AspNet.Mvc.ModelBinding;
 using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.AspNet.Routing;
 using Microsoft.Framework.Internal;
+using Newtonsoft.Json;
 
 namespace Microsoft.AspNet.Mvc
 {
@@ -170,6 +171,18 @@ namespace Microsoft.AspNet.Mvc
         public JsonViewComponentResult Json([NotNull] object value)
         {
             return new JsonViewComponentResult(value);
+        }
+
+        /// <summary>
+        /// Returns a result which will render JSON text.
+        /// </summary>
+        /// <param name="value">The value to output in JSON text.</param>
+        /// <param name="serializerSettings">The <see cref="JsonSerializerSettings"/> to be used by
+        /// the formatter.</param>
+        /// <returns>A <see cref="JsonViewComponentResult"/>.</returns>
+        public JsonViewComponentResult Json([NotNull] object value, [NotNull] JsonSerializerSettings serializerSettings)
+        {
+            return new JsonViewComponentResult(value, serializerSettings);
         }
 
         /// <summary>
