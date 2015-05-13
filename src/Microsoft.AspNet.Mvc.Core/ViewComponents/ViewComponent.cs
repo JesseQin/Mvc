@@ -168,7 +168,7 @@ namespace Microsoft.AspNet.Mvc
         /// </summary>
         /// <param name="value">The value to output in JSON text.</param>
         /// <returns>A <see cref="JsonViewComponentResult"/>.</returns>
-        public JsonViewComponentResult Json([NotNull] object value)
+        public JsonViewComponentResult Json(object value)
         {
             return new JsonViewComponentResult(value);
         }
@@ -180,7 +180,7 @@ namespace Microsoft.AspNet.Mvc
         /// <param name="serializerSettings">The <see cref="JsonSerializerSettings"/> to be used by
         /// the formatter.</param>
         /// <returns>A <see cref="JsonViewComponentResult"/>.</returns>
-        public JsonViewComponentResult Json([NotNull] object value, [NotNull] JsonSerializerSettings serializerSettings)
+        public JsonViewComponentResult Json(object value, [NotNull] JsonSerializerSettings serializerSettings)
         {
             return new JsonViewComponentResult(value, serializerSettings);
         }

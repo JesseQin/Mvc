@@ -17,8 +17,8 @@ namespace Microsoft.AspNet.Mvc
         /// Initializes a new <see cref="JsonViewComponentResult"/>.
         /// </summary>
         /// <param name="value">The value to format as JSON text.</param>
-        public JsonViewComponentResult(object value) :
-            this(value, formatter: null)
+        public JsonViewComponentResult(object value)
+            : this(value, formatter: null)
         {
         }
 
@@ -28,8 +28,8 @@ namespace Microsoft.AspNet.Mvc
         /// <param name="value">The value to format as JSON text.</param>
         /// <param name="serializerSettings">The <see cref="JsonSerializerSettings"/> to be used by
         /// the formatter.</param>
-        public JsonViewComponentResult(object value, [NotNull] JsonSerializerSettings serializerSettings) :
-            this(value, new JsonOutputFormatter(serializerSettings))
+        public JsonViewComponentResult(object value, [NotNull] JsonSerializerSettings serializerSettings)
+            : this(value, new JsonOutputFormatter(serializerSettings))
         {
         }
 
